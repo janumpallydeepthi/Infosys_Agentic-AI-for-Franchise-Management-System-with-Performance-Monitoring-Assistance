@@ -121,7 +121,6 @@ All screenshots are stored in the `screenshots/` folder inside `Milestone_1`.
 ## 📁 Project Structure
 ```
 Milestone1/
-├── README.md # This file
 ├── working_model_milestone1.ipynb # Colab notebook
 ├── infosys_portal.db # SQLite database (auto‑created)
 ├── screenshots/ # Screenshots folder
@@ -133,7 +132,7 @@ Milestone1/
 │ ├── user_dashboard.png
 │ └── admin_dashboard.png
 └── .streamlit/ # Streamlit config (auto‑created)
-└── config.toml
+├── README.md # This file
 ```
 
 ---
