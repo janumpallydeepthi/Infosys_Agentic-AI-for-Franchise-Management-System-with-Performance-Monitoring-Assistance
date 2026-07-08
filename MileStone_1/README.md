@@ -52,7 +52,6 @@ This milestone focuses on building a **secure user authentication and management
 | **smtplib** | Sending OTP emails via Gmail SMTP |
 | **pyngrok** | Exposing the app to the internet |
 | **Google Colab** | Development and deployment environment |
-| **Plotly** | Dashboard visualizations (gauge chart) |
 
 ---
 
@@ -65,7 +64,7 @@ This milestone focuses on building a **secure user authentication and management
 
 ### Step-by-Step Instructions
 
-1. **Open the Colab notebook** provided by your mentor.
+1. **Open the Colab notebook**
 2. **Set up Colab Secrets** – Click the key icon (🔑) on the left sidebar and add:
 
    | Secret Name | Value |
@@ -96,7 +95,7 @@ This milestone focuses on building a **secure user authentication and management
 
 ## Screenshots
 
-All screenshots are stored in the `screenshots/` folder inside `Milestone1`.
+All screenshots are stored in the `screenshots/` folder inside `Milestone_1`.
 
 | Page | Screenshot |
 | :--- | :--- |
