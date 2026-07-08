@@ -131,8 +131,8 @@ Milestone1/
 │ ├── otp_email.png
 │ ├── user_dashboard.png
 │ └── admin_dashboard.png
-└── .streamlit/ # Streamlit config (auto‑created)
-├── README.md # This file
+├── .streamlit/ # Streamlit config (auto‑created)
+└──README.md # This file
 ```
 
 ---
