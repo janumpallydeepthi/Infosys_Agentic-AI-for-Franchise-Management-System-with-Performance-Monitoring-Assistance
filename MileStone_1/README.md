@@ -114,7 +114,7 @@ All screenshots are stored in the `screenshots/` folder inside `Milestone_1`.
 | Login Type | Username / Email | Password |
 | :--- | :--- | :--- |
 | **Separate Admin Login** (click "Admin Login") | `admin` | `admin@123` |
-| **Main Login Admin** (via main login page) | `admin@infosysfranchise.com` | `admin@123` |
+| **Main Login Admin** (via main login page) | `franchise.admin@infosys.com` | `admin@123` |
 
 ---
 
