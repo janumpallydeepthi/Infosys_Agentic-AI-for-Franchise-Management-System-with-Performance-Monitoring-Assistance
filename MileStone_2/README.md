@@ -108,30 +108,30 @@ python train_m2_franchise.py
 The following images must be saved in the `Milestone2/screenshots/` folder and are referenced below. Please take these captures directly from the running application:
 
 1. **Home page**
-   - *Filename:* `screenshots/home_page.png`
+   - *Filename:* ![Home Page](screenshots/home_page.png)
    - *Description:* The landing dashboard showing the navigation sidebar and welcome screen.
 
 2. **AI Copilot (prompt + response)**
-   - *Filename:* `screenshots/ai_copilot_response.png`
+   - *Filename:* ![AI Copilot](screenshots/ai_copilot_response.png)
    - *Description:* An interaction where the user asks a business question and the AI provides a valid response.
 
 3. **Weather Demo (city + result)**
-   - *Filename:* `screenshots/weather_demo.png`
+   - *Filename:* ![Weather Demo](screenshots/weather_demo.png)
    - *Description:* A valid city selection showing the current weather data.
 
 4. **Outlet Tiers page (showing the 3-tier chart)**
-   - *Filename:* `screenshots/outlet_tiers_chart.png`
+   - *Filename:* ![Outlet Tiers](screenshots/outlet_tiers_chart.png)
    - *Description:* The data visualization chart clearly displaying the 4 outlet tiers (Tier 1–4).
 
 5. **Admin Panel → ML Model Card tab (showing all 3 agents' metrics + KMeans)**
-   - *Filename:* `screenshots/admin_ml_model_card.png`
+   - *Filename:* ![ML Model Card](screenshots/admin_ml_model_card.png)
    - *Description:* The admin panel showing evaluation metrics for Workforce, Outlet, Inventory agents, alongside the KMeans clustering insights.
 
 6. **Triggered lockout message**
-   - *Filename:* `screenshots/triggered_lockout.png`
+   - *Filename:* ![Lockout Message](screenshots/triggered_lockout.png)
    - *Description:* The system's response to multiple failed login attempts, showing the account lockout screen.
 
 7. **OTP cooldown message**
-   - *Filename:* `screenshots/otp_cooldown.png`
+   - *Filename:* ![OTP Cooldown](screenshots/otp_cooldown.png)
    - *Description:* The message displayed when a user requests an OTP too frequently, showing a countdown timer or cooldown warning.
 
