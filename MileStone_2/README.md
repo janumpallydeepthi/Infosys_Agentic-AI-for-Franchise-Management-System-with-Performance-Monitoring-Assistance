@@ -119,7 +119,7 @@ The following images must be saved in the `Milestone2/screenshots/` folder and a
    - *Filename:* `screenshots/weather_demo.png`
    - *Description:* A valid city selection showing the current weather data.
 
-4. **Outlet Tiers page (showing the 4-tier chart)**
+4. **Outlet Tiers page (showing the 3-tier chart)**
    - *Filename:* `screenshots/outlet_tiers_chart.png`
    - *Description:* The data visualization chart clearly displaying the 4 outlet tiers (Tier 1–4).
 
@@ -127,15 +127,11 @@ The following images must be saved in the `Milestone2/screenshots/` folder and a
    - *Filename:* `screenshots/admin_ml_model_card.png`
    - *Description:* The admin panel showing evaluation metrics for Workforce, Outlet, Inventory agents, alongside the KMeans clustering insights.
 
-6. **Admin Panel → Add / Delete / Unlock user actions**
-   - *Filename:* `screenshots/admin_user_actions.png`
-   - *Description:* Confirmation or success toast messages demonstrating user addition, deletion, and unlocking functionalities.
-
-7. **Triggered lockout message**
+6. **Triggered lockout message**
    - *Filename:* `screenshots/triggered_lockout.png`
    - *Description:* The system's response to multiple failed login attempts, showing the account lockout screen.
 
-8. **OTP cooldown message**
+7. **OTP cooldown message**
    - *Filename:* `screenshots/otp_cooldown.png`
    - *Description:* The message displayed when a user requests an OTP too frequently, showing a countdown timer or cooldown warning.
 
