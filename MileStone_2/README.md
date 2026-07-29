@@ -105,8 +105,6 @@ python train_m2_franchise.py
 > *If you encounter the `ValueError: X has 6 features, but StandardScaler is expecting 4 features` error when accessing Agent 1, this is due to a feature mismatch in the ML pipeline. This is a known edge case when the input dataframe contains extra columns that the training model did not learn from. A patch is applied in `train_m2_franchise.py` to strictly filter columns down to the `model.feature_names_in_` set prior to prediction.*
 
 ## 9. Screenshots to Capture
-The following images must be saved in the `Milestone2/screenshots/` folder and are referenced below. Please take these captures directly from the running application:
-
 1. **Home page**
    - *Filename:* ![Home Page](screenshots/home_page.png)
    - *Description:* The landing dashboard showing the navigation sidebar and welcome screen.
