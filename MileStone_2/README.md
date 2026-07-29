@@ -139,8 +139,3 @@ The following images must be saved in the `Milestone2/screenshots/` folder and a
    - *Filename:* `screenshots/otp_cooldown.png`
    - *Description:* The message displayed when a user requests an OTP too frequently, showing a countdown timer or cooldown warning.
 
----
-
-### How to update the screenshot links
-Replace the example filenames above (`screenshots/home_page.png`) with the actual filenames you used to save your screenshots. Example:
-`![Home Page](screenshots/home_page.png)`
