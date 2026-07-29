@@ -21,12 +21,12 @@ While Milestone 1 focused on the foundational UI, authentication, and basic AI c
 
 ## 3. Repository & Folder Structure
 > **Note**: This project continues inside your existing Infosys Repository. Do not create a new repository.
-"""
+```
 Infosys_Repository/
 ├── Milestone1/ (Previous milestone files)
 └── Milestone2/ (Current milestone - everything resides here)
 ├── README.md (This file)
-├── FranchiseOps_AI_Milestone2.ipynb (Main Jupyter Notebook)
+├── working_model_Milestone2.ipynb (Main Jupyter Notebook)
 ├── auth.py (Authentication, OTP, lockout logic)
 ├── db.py (Database operations)
 ├── ui_theme.py (Centralized UI styling and theme configuration)
@@ -35,7 +35,7 @@ Infosys_Repository/
 ├── llm_engine_franchise.py (Copilot/LLM interaction handler)
 ├── requirements.txt (Python dependencies)
 └── screenshots/
-"""
+```
 
 ## 4. System Architecture Overview
 The system follows a modular, layered architecture designed for scalability:
@@ -65,7 +65,7 @@ The system utilizes a localized dataset spanning 6 major Indian metropolitan ret
 The modular scripts and notebook require access to environment secrets and external datasets. Follow these steps to configure your environment:
 
 ### Step 1: Configure Google Colab Secrets
-1. Open your `FranchiseOps_AI_Milestone2.ipynb` in Google Colab.
+1. Open your `working_model_Milestone2.ipynb` in Google Colab.
 2. Go to the **🔑 Secrets** tab on the left sidebar.
 3. Add the following keys and their corresponding values:
    - `KAGGLE_USERNAME`: Your Kaggle username.
@@ -94,7 +94,7 @@ pip install -r requirements.txt
 Once dependencies are installed and secrets are configured, you can run the application.
 To run the main Streamlit Application:
 ```
-streamlit run FranchiseOps_AI_Milestone2.ipynb
+streamlit run working_model_Milestone2.ipynb
 ```
 
 To train/finetune the ML Models:
