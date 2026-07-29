@@ -20,7 +20,6 @@ While Milestone 1 focused on the foundational UI, authentication, and basic AI c
 - **Version Control**: Git / GitHub (hosted within the existing Infosys Repository).
 
 ## 3. Repository & Folder Structure
-> **Note**: This project continues inside your existing Infosys Repository. Do not create a new repository.
 ```
 Infosys_Repository/
 ├── Milestone1/ (Previous milestone files)
