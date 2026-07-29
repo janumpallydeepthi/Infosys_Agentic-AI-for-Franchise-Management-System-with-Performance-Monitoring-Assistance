@@ -51,14 +51,14 @@ The system follows a modular, layered architecture designed for scalability:
 ## 5. Localized Indian Retail City Table
 The system utilizes a localized dataset spanning 6 major Indian metropolitan retail hubs for analysis and forecasting:
 
-| City | State/Region | Key Retail Segment |
-| :--- | :--- | :--- |
-| **Mumbai** | Maharashtra | Premium QSR, Luxury Retail |
-| **Delhi NCR** | National Capital Region | High-volume Grocery, Fast Fashion |
-| **Bengaluru** | Karnataka | Tech-driven retail, D2C Brands |
-| **Hyderabad** | Telangana | Traditional & Modern Trade chains |
-| **Chennai** | Tamil Nadu | Apparel, Automobile Retail |
-| **Pune** | Maharashtra | Emerging retail hubs, Food & Beverage |
+| City | State/Region |
+| :--- | :--- |
+| **Mumbai** | Maharashtra |
+| **Delhi NCR** | National Capital Region |
+| **Bengaluru** | Karnataka |
+| **Hyderabad** | Telangana |
+| **Chennai** | Tamil Nadu |
+| **Pune** | Maharashtra |
 
 ## 6. Environment & Setup (Colab Secrets + Kaggle API)
 The modular scripts and notebook require access to environment secrets and external datasets. Follow these steps to configure your environment:
