@@ -1,169 +1,327 @@
 # **Milestone 3: Retrieval-Augmented Generation (RAG) Pipeline**
 
-> *Turning 500+ scattered regulatory documents into a single, instant, and verifiable question-answering system for Franchise QSR operations.*
+# FranchiseOps AI — RAG Knowledge Base Builder
 
----
+This notebook collects information from curated web and PDF sources, extracts text, adds operational SOP knowledge, converts the content into embeddings, and stores the embeddings in a FAISS vector index for semantic retrieval.
 
-## Project Overview
+## 🎯 Objectives & Deliverables
 
-In a Franchise QSR business, store managers face thousands of pages of compliance rules—spanning FSSAI food safety, OSHA labor laws, GST taxation, and internal Standard Operating Procedures (SOPs). 
+The primary objective of this module is to construct a robust, high-performance knowledge retrieval pipeline that powers the FranchiseOps RAG System with grounded, domain-specific intelligence.
 
-This project builds a **semantic search engine** (RAG pipeline) that:
+| # | Icon | Objective | Target Description | Primary Tool / Tech |
+|---|------|-----------|-------------------|---------------------|
+| 1 | 🔎 | Knowledge Base Construction | Build a reliable, structured knowledge base tailored for the FranchiseOps RAG system. | LangChain, Google Drive |
+| 2 | 🌐 | Multi-Domain Web Scraping | Collect relevant operational data across marketing, CX, HR, food safety, labor laws, and workplace safety. | Requests, BeautifulSoup |
+| 3 | 📄 | Text Extraction & Storage | Parse and extract clean text from web pages and downloadable PDFs into persistent .txt files. | PyMuPDF (fitz) |
+| 4 | 📚 | SOP Integration | Merge extracted external source materials with curated FranchiseOps operational SOPs and metadata. | LangChain Document |
+| 5 | ✂️ | Document Chunking | Divide long-form text into manageable, overlapping chunks to maintain semantic context during retrieval. | RecursiveCharacterTextSplitter |
+| 6 | 🧠 | Semantic Embeddings | Convert document text chunks into 384-dimensional dense vector representations. | all-MiniLM-L6-v2 |
+| 7 | 🗂️ | Vector Indexing | Index and store vector embeddings in a high-speed similarity database for k-NN search. | FAISS |
+| 8 | 💬 | Grounded Retrieval & Metadata | Retrieve top-matching knowledge chunks for user queries along with traceable source/SOP citations. | FAISS Retriever, Qwen2.5-3B |
 
-1. **Scrapes** 100+ trusted regulatory websites and 500+ PDFs.
-2. **Stores** them as searchable text chunks.
-3. **Converts** them into mathematical vectors (embeddings).
-4. **Retrieves** the exact answer to any operational question in milliseconds—along with the verifiable source.
+## ✨ Features & Capabilities
 
----
+### 📚 1. Document RAG Engine & PDF Studio
 
-## Architecture
+| Feature | Description |
+|---------|-------------|
+| PDF Discovery & Parsing | Scrapes and downloads PDF manuals and operational guidelines using BeautifulSoup and Requests. |
+| Text Extraction & Chunking | Extracts raw text via PyMuPDF (fitz) and creates optimized overlapping chunks using RecursiveCharacterTextSplitter. |
+| Vector Store & Retrieval | Converts text into semantic embeddings with all-MiniLM-L6-v2 and indexes them in FAISS for fast similarity search. |
+| Grounded AI Generation | Feeds relevant document chunks into the LLM context to generate accurate answers with source citations and avoid hallucinations. |
 
-![RAG Architecture](https://miro.medium.com/v2/resize:fit:1400/1*9cVlVhhaUobT-7l1y7JgZQ.png)
+### 📊 2. Kaggle Data Pipeline
 
-The pipeline is divided into **two distinct notebooks** (as per Milestone 3 requirements):
+| Feature | Description |
+|---------|-------------|
+| Automated Dataset Ingestion | Fetches enterprise HR, logistics, and sales datasets automatically via the Kaggle API. |
+| Data Cleaning & Normalization | Cleans missing fields, handles malformed inputs, and formats columns for downstream agent consumption. |
+| Non-Destructive Refresh | Updates internal data storage tables seamlessly without resetting active user sessions or authentication records. |
 
-| Notebook | Purpose |
-| :--- | :--- |
-| **Milestone_1_2_Scraping_Preprocessing.ipynb** | Web scraping, PDF harvesting, text extraction, and caching. |
-| **Milestone_3_RAG_Pipeline.ipynb** | Chunking, Embedding, FAISS indexing, and Interactive Querying. |
+### 🤖 3. AI Copilot & Domain Intelligence
 
-### Flow Diagram
+| Feature | Description |
+|---------|-------------|
+| RAG-Backed Copilot | Answers user queries in real-time by drawing factual knowledge directly from indexed franchise documents. |
+| Sentiment & Feedback Analysis | Evaluates customer feedback and operational logs using VADER Sentiment and TextBlob. |
+| Multi-Agent Data Feeds | Passes refreshed pipeline data directly to domain agents (Workforce, Outlet Tiering, Inventory Safety). |
+
+## 🏗 RAG System Architecture
 ```
-Web/PDF Sources
-↓
-Scraping & Text Extraction (PyMuPDF + BeautifulSoup)
-↓
-Caching (manifest.json + .txt files in Google Drive)
-↓
-Chunking (RecursiveCharacterTextSplitter - 1000 chars, 100 overlap)
-↓
-Embedding (HuggingFace all-MiniLM-L6-v2 → 384-dim vectors)
-↓
-Vector Store (FAISS - Facebook AI Similarity Search)
-↓
-Interactive Query Loop (Semantic Search + Source Attribution)
+Configured HTML Sources + PDF Sources
+|
+v
+Web Scraping / PDF Harvesting
+|
+v
+PDF Download + Text Extraction
+|
+v
+Text Documents (.txt)
+|
++------ Curated Franchise SOPs
+|
+v
+LangChain Document Objects
+|
+v
+Recursive Text Chunking
+chunk_size = 1000
+overlap = 100
+|
+v
+HuggingFace Sentence Embeddings
+all-MiniLM-L6-v2
+|
+v
+FAISS Vector Store
+|
+v
+Similarity Search / Retrieval
+|
+v
+Relevant Source Snippet
 ```
----
 
-## Technologies Used
 
-| Category | Libraries / Tools |
-| :--- | :--- |
-| **Web Scraping** | `requests`, `BeautifulSoup` (bs4) |
-| **PDF Parsing** | `PyMuPDF` (fitz) |
-| **Text Splitting** | `langchain_text_splitters.RecursiveCharacterTextSplitter` |
-| **Embeddings** | `sentence-transformers` + `langchain_community.embeddings.HuggingFaceEmbeddings` (Model: `all-MiniLM-L6-v2`) |
-| **Vector Database** | `FAISS` (Facebook AI Similarity Search) |
-| **Environment** | Google Colab, Google Drive (persistent storage) |
-| **Language** | Python 3.10+ |
+## 🛠️ Technologies Used
 
----
+| 🔧 Technology | 📌 Purpose |
+|---------------|------------|
+| 🐍 Python | Main implementation language |
+| ☁️ Google Colab | Notebook execution environment |
+| 💾 Google Drive | Persistent storage for RAG documents |
+| 🌐 Requests | Web requests and PDF downloading |
+| 🧹 BeautifulSoup | HTML parsing and PDF-link discovery |
+| 📄 PyMuPDF (fitz) | PDF text extraction |
+| 🔗 LangChain | Document processing and vector-store workflow |
+| ✂️ RecursiveCharacterTextSplitter | Document chunking |
+| 🧠 Sentence Transformers | Semantic text embeddings |
+| 🤗 all-MiniLM-L6-v2 | Embedding model |
+| 🗃️ FAISS | Vector similarity search and storage |
+| 📝 TextBlob | Text-processing dependency |
+| 💭 VADER Sentiment | Sentiment-analysis dependency |
+| ⏳ tqdm | Progress bars during processing |
 
-## Key Features
+## 📂 Project Structure
+```
+FranchiseOps_AI/
+│
+├── rag_documents/
+│ ├── html_.txt
+│ ├── pdf_.txt
+│ ├── manifest.json
+│ ├── kb_franchise.json
+│ ├── franchiseops_faiss_index/
+│ ├── RAG_KnowledgeBase.ipynb
+│ └── README.md
+```
 
-### 1. Hybrid Data Ingestion
-- **Static Lists:** 116 manually curated HTML sources + 109 direct PDF links.
-- **Auto-Harvesting:** Scans every scraped HTML page for hidden PDF links, dynamically expanding the dataset. In our run, this auto-discovered **435 additional PDFs**.
-- **Incremental Caching:** Uses a `manifest.json` to track which URLs have been successfully scraped, preventing redundant downloads and saving time.
 
-### 2. Robust Text Extraction
-- Extracts text from both HTML and PDF files.
-- Saves extracted text as `.txt` files in Google Drive for persistent storage.
-- Handles failures gracefully (e.g., scanned images, broken links).
+## 🚀 Workflow
 
-### 3. Curated Knowledge Base (SOPs)
-Manually added **65 domain-specific SOPs** (KB-101 to KB-165) covering:
-- Food Safety (Temperature logs, Handwashing, Cross-contamination).
-- HR Compliance (POSH Act, Grievance handling, Performance reviews).
-- Operations (Cash handling, POS downtime, Shift requirements).
-- Legal (FSSAI penalties, Franchise renewal terms, CCTV retention).
+### Step 1 – Environment Setup
+- Install all required Python libraries.
+- Mount Google Drive.
+- Create the RAG document storage directory.
+- Configure warning filters.
 
-### 4. Semantic Search
-- Converts text into **384-dimensional dense vectors** using `all-MiniLM-L6-v2`.
-- Stores vectors in **FAISS** for ultra-fast similarity search.
-- Retrieves the top-k most relevant chunks for any user query.
+### Step 2 – Data Source Collection
+The system collects data from two major categories:
 
-### 5. Explainable & Verifiable Answers
-- Every answer is accompanied by the **exact source** (e.g., `curated_sops | KB-101` or `pdf_osha.pdf.txt`).
-- Eliminates "hallucinations" by strictly returning retrieved text.
+**HTML Sources** - The project gathers information from trusted websites including:
+- Marketing research
+- Customer experience
+- HR management
+- Food Safety
+- FSSAI
+- Labour laws
+- OSHA
+- WHO
+- FDA
+- Government portals
+- Franchise management resources
 
----
+**PDF Sources** - The project downloads official PDF documents such as:
+- FSSAI Regulations
+- Food Safety Standards
+- WHO Reports
+- OSHA Guidelines
+- Labour Acts
+- Franchise Regulations
+- Government Manuals
+- Compliance Documents
 
-## Dataset Statistics
+### Step 3 – HTML Scraping
+Each webpage is automatically processed by:
+- Sending HTTP requests
+- Parsing HTML using BeautifulSoup
+- Removing unnecessary tags
+- Extracting meaningful text
+- Saving cleaned content as text files
 
-| Metric | Value |
-| :--- | :--- |
-| **HTML Sources** | 116 |
-| **PDF Sources (Static)** | 109 |
-| **Auto-Discovered PDFs** | 435 |
-| **Total Unique PDFs Processed** | 543 |
-| **Successfully Scraped PDFs** | 13 (text-based) |
-| **Successfully Scraped HTML** | 17+ (cached) |
-| **Total .txt files in RAG_DIR** | 338 |
-| **Curated SOPs** | 65 |
-| **Total Documents in Memory** | 403 |
-| **Total Chunks after Splitting** | **18,255** |
-| **FAISS Index Saved** | `franchiseops_faiss_index` (Drive & Local) |
+### Step 4 – Automatic PDF Discovery
+The scraper automatically scans HTML pages for embedded PDF links. Features include:
+- Relative URL conversion
+- Duplicate removal
+- Automatic PDF collection
+- Expansion of the knowledge base
 
----
+### Step 5 – PDF Processing
+Each PDF is:
+- Downloaded
+- Parsed using PyMuPDF
+- Converted into text
+- Stored as a text document
+- Logged in the manifest file
 
-## How to Run
+### Step 6 – Manifest Tracking
+A manifest file records every processed URL. Benefits include:
+- Prevents duplicate downloads
+- Enables resumable execution
+- Tracks successful and failed files
 
-### Prerequisites
-- Google Colab account.
-- Google Drive mounted.
-- Internet connection for downloading the embedding model.
+### Step 7 – Document Loading
+All generated text files are loaded into LangChain Documents. Each document stores:
+- Content
+- Source filename
+- Metadata
 
-### Step 1: Run the Scraping Notebook
-1. Open `Milestone_1_2_Scraping_Preprocessing.ipynb`.
-2. Mount your Google Drive.
-3. Run all cells. The scraper will:
-   - Scrape HTML pages.
-   - Auto-discover PDFs.
-   - Download and extract text from PDFs.
-   - Save everything to `rag_documents` in your Drive.
+### Step 8 – Curated Knowledge Base
+Along with external data, the project adds manually curated Standard Operating Procedures (SOPs). Examples include:
+- Freezer temperature guidelines
+- Food hygiene rules
+- Staff requirements
+- Marketing ROI thresholds
+- Customer complaint handling
+- Store opening checklist
+- Safety procedures
+- FSSAI compliance
 
-### Step 2: Run the RAG Pipeline Notebook
-1. Open `Milestone_3_RAG_Pipeline.ipynb`.
-2. Mount your Google Drive.
-3. Run all cells. This will:
-   - Load all `.txt` files from `rag_documents`.
-   - Add the curated SOPs.
-   - Split text into chunks.
-   - Generate embeddings and build the FAISS index.
-   - Launch the interactive query loop.
+These SOPs improve retrieval quality by providing structured operational knowledge.
 
-### Step 3: Ask Questions
-Once the query loop is running, type your questions:
+### Step 9 – Text Chunking
+Large documents are split into manageable chunks using:
+- RecursiveCharacterTextSplitter
+- Chunk Size = 1000 characters
+- Chunk Overlap = 100 characters
 
-The system will return the top 3 matching chunks with source attribution.
+This improves semantic search accuracy.
 
-### Example Test Queries
-- `What is the handwashing procedure?`
-- `What are the penalties for FSSAI non-compliance?`
-- `What is the POSH Act requirement in India?`
-- `How often should supplier audits be conducted?`
-- `What are the EU limits for Ethylene Oxide in spices?`
-- `What is the protocol for glass breakage near food prep areas?`
+### Step 10 – Embedding Generation
+Each text chunk is converted into vector embeddings using:
+- Model: all-MiniLM-L6-v2
 
----
+**Advantages:**
+- Lightweight
+- Fast
+- High semantic accuracy
+- Suitable for Retrieval-Augmented Generation
 
-## Testing & Validation
+### Step 11 – FAISS Vector Database
+The embeddings are stored in a FAISS vector index. Benefits include:
+- Fast similarity search
+- Efficient storage
+- Scalable retrieval
+- Supports semantic queries
 
-- Successfully passed **30+ distinct test queries** across multiple domains (Food Safety, HR Compliance, Operations, Finance, Regulatory).
-- Rigorous testing included:
-  - **Exact Match Queries** (e.g., freezer temperature → -18°C).
-  - **Semantic Queries** (e.g., "How to prevent cross-contamination?" → retrieved color-coded boards).
-  - **Hybrid Queries** (pulling from both SOPs and scraped PDFs).
+The vector database is saved locally for future use.
 
----
+### Step 12 – Semantic Retrieval Testing
+The project validates the RAG system using sample queries such as:
+- Minimum freezer temperature
+- Staff requirements
+- Handwashing procedure
+- FSSAI penalties
+- Customer complaint escalation
+- Marketing ROI threshold
+- Staff performance review
 
-## Future Scope / Enhancements
+The system retrieves the most relevant document along with its source metadata.
 
-1. **Generative AI Integration (LLM):** Add Gemini or GPT to convert retrieved snippets into polished, conversational answers (true RAG).
-2. **OCR Support:** Implement Tesseract to read scanned PDFs (currently, many government PDFs are images).
-3. **JavaScript Rendering:** Upgrade to Selenium/Playwright to scrape dynamic websites.
-4. **Multi-modal Search:** Add image/table extraction from PDFs.
-5. **Deployment:** Wrap the pipeline in a Streamlit or Gradio web interface for non-technical users.
+## 🔍 Code Analysis
 
+### Data Collection
+The code gathers knowledge from trusted websites and official documents.
+
+### Data Cleaning
+HTML tags, navigation bars, scripts, and styles are removed to preserve only meaningful textual information.
+
+### PDF Extraction
+PyMuPDF extracts machine-readable text from PDF files while ignoring unsupported scanned documents.
+
+### Knowledge Base Construction
+The project combines:
+- External research documents
+- Government regulations
+- Official standards
+- Internal SOP documents
+
+into a single unified knowledge repository.
+
+### Embedding Pipeline
+Each document chunk is converted into numerical vectors using HuggingFace sentence embeddings. Semantic similarity is preserved, allowing intelligent retrieval.
+
+### Vector Search
+FAISS performs nearest-neighbor search to identify the most relevant information based on user queries rather than exact keyword matching.
+
+### Testing
+The retrieval system is evaluated using operational and compliance-related questions to ensure relevant information is returned accurately.
+
+## 📈 Features
+
+- HTML Web Scraping
+- Automatic PDF Harvesting
+- PDF Text Extraction
+- Knowledge Base Generation
+- SOP Integration
+- Document Chunking
+- Sentence Embeddings
+- FAISS Vector Database
+- Semantic Search
+- Metadata Tracking
+- Manifest Management
+- Retrieval Testing
+
+## 📊 Expected Output
+
+- Downloaded HTML and PDF knowledge sources
+- Clean text repository
+- Curated SOP database
+- Chunked documents
+- Sentence embeddings
+- FAISS vector index
+- Successful semantic retrieval for business queries
+
+## Learning Outcomes
+
+Through this milestone, the following concepts were learned:
+
+- Retrieval-Augmented Generation (RAG)
+- Web scraping using BeautifulSoup
+- PDF text extraction using PyMuPDF
+- Document preprocessing
+- Text chunking
+- Sentence embeddings
+- Semantic search
+- FAISS indexing
+- Knowledge base creation
+- LangChain document processing
+
+## 🚀 Future Enhancements
+
+- Integrate a Large Language Model (LLM)
+- Build an interactive chatbot
+- Support real-time document updates
+- Enable multilingual retrieval
+- Improve ranking using hybrid search
+- Deploy the RAG pipeline as a web application
+
+## Team Members
+
+- Janumpally Deepthi
+- Gujjula Bhavya Sree
+- Kuladeep Reddy Perla
+- Raghuvansh Pandey
+- Kakileti Lavanya
+- Konisetti Parinitha
