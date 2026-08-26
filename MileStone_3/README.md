@@ -160,6 +160,10 @@ Each webpage is automatically processed by:
 - Extracting meaningful text
 - Saving cleaned content as text files
 
+![step3.1](images/step 3.1.png)
+![step3.2](images/step 3.2.png)
+![step3.3](images/step 3.3.png)
+
 ### Step 4 – Automatic PDF Discovery
 The scraper automatically scans HTML pages for embedded PDF links. Features include:
 - Relative URL conversion
@@ -292,6 +296,14 @@ The retrieval system is evaluated using operational and compliance-related quest
 - Sentence embeddings
 - FAISS vector index
 - Successful semantic retrieval for business queries
+
+## Query
+![Query](images/queries.png)
+
+## Answer
+![answer 1](images/answer 1.png)
+![answer 2](images/answer 2.png)
+![answer 3](images/answer 3.png)
 
 ## Learning Outcomes
 
