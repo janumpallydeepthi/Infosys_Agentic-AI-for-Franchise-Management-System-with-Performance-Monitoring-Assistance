@@ -648,6 +648,7 @@ The application will normally become available at:
 http://localhost:8501
 ```
 
+---
 
 ### Run on Google Colab
 
@@ -801,57 +802,77 @@ Example:
 The repository should contain a `.gitignore` similar to:
 
 ### Environment
+```
 .env
 .env.*
 !.env.example
+```
 
 ### Python
+```
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+```
 
 ### Jupyter
+```
 .ipynb_checkpoints/
 *.ipynb_checkpoints
+```
 
 ### Virtual environments
+```
 venv/
 .venv/
 env/
+```
 
 ### Databases
+```
 *.db
 *.sqlite
 *.sqlite3
+```
 
 ### Runtime data
+```
 runtime_data/
 *.log
+```
 
 ### Model/cache files
+```
 .cache/
 huggingface/
 hf_models/
+```
 
 ### Secrets
+```
 secrets.toml
 .streamlit/secrets.toml
+```
 
 ### OS
+```
 .DS_Store
 Thumbs.db
+```
 
 ### IDE
+```
 .vscode/
 .idea/
+```
 
 ---
 
 ## .env.example
 
 Commit only variable names/placeholders:
-
+```
 HF_TOKEN=
 HUGGINGFACE_TOKEN=
 
@@ -861,6 +882,7 @@ EMAIL_PASSWORD=
 JWT_SECRET_KEY=
 
 FRANCHISEOPS_DATA_DIR=
+```
 
 > **Never commit the real .env.**
 
