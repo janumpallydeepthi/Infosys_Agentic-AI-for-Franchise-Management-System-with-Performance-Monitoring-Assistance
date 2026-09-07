@@ -45,10 +45,10 @@
 | Name | Role / What They Built | GitHub Handle |
 |------|------------------------|---------------|
 | Janumpally Deepthi | AI/ML Model Development | [@janumpallydeepthi](https://github.com/janumpallydeepthi) |
-| Divya Sree | Admin Dashboard & Data Feed Center | [@a]([https://github.com/a](https://github.com/divyasreekoneti0406-bit)) |
-| Raghuvansh Pandey | UI/Frontend Development | [@b]([https://github.com/b](https://github.com/ra109)) |
+| Divya Sree | Admin Dashboard & Data Feed Center | [@divyasreekoneti0406-bit]([https://github.com/a](https://github.com/divyasreekoneti0406-bit)) |
+| Raghuvansh Pandey | UI/Frontend Development | [@ra109]([https://github.com/b](https://github.com/ra109)) |
 | R.Jayasree | Authentication and Login Module | [@racharlajayasree06-ai](https://github.com/racharlajayasree06-ai) |
-| Nandani Kumari Saha | System Integration & Analytics | [@d]([https://github.com/d](https://github.com/nandani8) |
+| Nandani Kumari Saha | System Integration & Analytics | [@nandani8]([https://github.com/d](https://github.com/nandani8) |
 
 ---
 
