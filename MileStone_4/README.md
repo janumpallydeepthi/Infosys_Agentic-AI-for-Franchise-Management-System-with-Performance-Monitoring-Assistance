@@ -10,6 +10,7 @@
 
 ## 📌 Table of Contents
 
+- [Demo Video](#demo-video)
 - [Program & Team Context](#program--team-context)
 - [Overall Project Explanation](#overall-project-explanation)
 - [Architecture Overview](#architecture-overview)
@@ -21,7 +22,6 @@
 - [Application Screenshots](#application-screenshots)
 - [Installation & Run Instructions](#installation--run-instructions)
 - [requirements.txt](#requirementstxt)
-- [Demo Video](#demo-video)
 - [Environment Variables & Secrets](#environment-variables--secrets)
 - [Known Limitations & Future Scope](#known-limitations--future-scope)
 - [Acknowledgements](#acknowledgements)
@@ -45,10 +45,16 @@
 | Name | Role / What They Built | GitHub Handle |
 |------|------------------------|---------------|
 | Janumpally Deepthi | AI/ML Model Development | [@janumpallydeepthi](https://github.com/janumpallydeepthi) |
-| Divya Sree | Admin Dashboard & Data Feed Center | [@a](https://github.com/a) |
-| Raghuvansh Pandey | UI/Frontend Development | [@b](https://github.com/b) |
+| Divya Sree | Admin Dashboard & Data Feed Center | [@divyasreekoneti0406-bit](https://github.com/divyasreekoneti0406-bit) |
+| Raghuvansh Pandey | UI/Frontend Development | [@ra109](https://github.com/ra109) |
 | R.Jayasree | Authentication and Login Module | [@racharlajayasree06-ai](https://github.com/racharlajayasree06-ai) |
-| Nandani Kumari Saha | System Integration & Analytics | [@d](https://github.com/d) |
+| Nandani Kumari Saha | System Integration & Analytics | [@nandani8](https://github.com/nandani8) |
+
+---
+
+## Demo Video
+
+[Watch the FranchiseOps AI Demo](https://drive.google.com/file/d/1F_VQhhmOMvzfSMQZED-ulhA232PwR7H0/view?usp=sharing)
 
 ---
 
@@ -110,7 +116,7 @@ The project follows a layered architecture:
 ### Architecture Diagram
 
 <div align="center">
-  <img src="screenshots/architecture.jpeg" alt="FranchiseOps AI Architecture" width="800"/>
+  <img src="MileStone_4/screenshots/architecture.jpeg" alt="FranchiseOps AI Architecture" width="800"/>
   <br/>
   <em>Four-Layer Platform Architecture</em>
 </div>
@@ -222,7 +228,7 @@ The agent reads from the `staff` table and analyses employee salary, overtime, j
 - AI workforce advisory
 
 <div align="center">
-  <img src="screenshots/agent.png" alt="Workforce Agent Dashboard" width="700"/>
+  <img src="MileStone_4/screenshots/agent.png" alt="Workforce Agent Dashboard" width="700"/>
   <br/>
   <em>Workforce Intelligence Dashboard with Attrition Prediction</em>
 </div>
@@ -566,32 +572,32 @@ Interactive map showing franchise outlet locations and revenue-based status indi
 
 ### 1. Login Screen
 <div align="center">
-  <img src="screenshots/login.png" alt="Login Screen" width="700"/>
+  <img src="MileStone_4/screenshots/login.png" alt="Login Screen" width="700"/>
 </div>
 
 ### 2. Agent Screen 
 <div align="center">
-  <img src="screenshots/agent.png" alt="Agent screen 1" width="700"/>
+  <img src="MileStone_4/screenshots/agent.png" alt="Agent screen 1" width="700"/>
 </div>
 
 ### 3. Translation Agent
 <div align="center">
-  <img src="screenshots/agent2.png" alt="Agent Screen 2" width="700"/>
+  <img src="MileStone_4/screenshots/agent2.png" alt="Agent Screen 2" width="700"/>
 </div>
 
 ### 4. AI Copilot
 <div align="center">
-  <img src="screenshots/copilot.jpeg" alt="AI Copilot" width="700"/>
+  <img src="MileStone_4/screenshots/copilot.jpeg" alt="AI Copilot" width="700"/>
 </div>
 
 ### 5. Admin Dashboard
 <div align="center">
-  <img src="screenshots/admin.png" alt="Admin Dashboard" width="700"/>
+  <img src="MileStone_4/screenshots/admin.png" alt="Admin Dashboard" width="700"/>
 </div>
 
 ### 6. OTP / Password Recovery
 <div align="center">
-  <img src="screenshots/otp.png" alt="OTP Recovery" width="700"/>
+  <img src="MileStone_4/screenshots/otp.png" alt="OTP Recovery" width="700"/>
 </div>
 
 ---
@@ -764,38 +770,7 @@ Some environments may require additional system packages.
 - For PDF processing: The Python application primarily uses pdfplumber
 - For GPU execution: NVIDIA driver and CUDA-compatible PyTorch installation
 
-## Demo Video
-
-**Recommended location:** `docs/demo/demo.mp4`
-
-### Suggested demo sequence
-
-1. Login
-2. Dashboard
-3. Forgot Password / OTP flow
-4. Workforce or Outlet Agent
-5. Inventory/Marketing/Customer Agent
-6. AI Copilot grounded question
-7. Multilingual translation
-8. PDF/document analysis
-9. Admin Dashboard
-
-### Demo Security
-
-- Use a fresh dummy account
-- Never display personal Gmail credentials, real Gmail inbox, real OTP messages
-- Never display API tokens, Hugging Face tokens
-- Never display personal customer information or private database information
-
-> **Note**: If the MP4 is larger than GitHub's file limit, host it externally and place the link in this section.
-
-Example:
-```text
-[Watch the FranchiseOps AI Demo](<DEMO-LINK>)
-```
-
 ---
-
 # Environment Variables & Secrets
 ## .gitignore
 
@@ -956,10 +931,10 @@ This project is developed as part of the Infosys Springboard Internship program.
 ## Connect with Us
 
 - **Janumpally Deepthi** - [@janumpallydeepthi](https://github.com/janumpallydeepthi)
-- **Divya Sree**
-- **Raghuvansh Pandey**
+- **Divya Sree** - [@divyasreekoneti0406-bit](https://github.com/divyasreekoneti0406-bit)
+- **Raghuvansh Pandey** - [@ra109](https://github.com/ra109)
 - **R.Jayasree** - [@racharlajayasree06-ai](https://github.com/racharlajayasree06-ai/)
-- **Nandani Kumari Saha**
+- **Nandani Kumari Saha** - [@nandani8](https://github.com/nandani8)
 
 ---
 
