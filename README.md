@@ -8,7 +8,7 @@
 
 ---
 
-[![Download(./MileStone_4/screenshots/demo.png)](https://drive.google.com/file/d/1F_VQhhmOMvzfSMQZED-ulhA232PwR7H0/view?usp=sharing)
+[![Download](./MileStone_4/screenshots/demo.png)](https://drive.google.com/file/d/1F_VQhhmOMvzfSMQZED-ulhA232PwR7H0/view?usp=sharing)
 
 ---
 
