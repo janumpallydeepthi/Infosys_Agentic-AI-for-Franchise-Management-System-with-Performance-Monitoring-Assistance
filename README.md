@@ -8,9 +8,12 @@
 
 ---
 
+[![Download(./MileStone_4/screenshots/demo.png)](https://drive.google.com/file/d/1F_VQhhmOMvzfSMQZED-ulhA232PwR7H0/view?usp=sharing)
+
+---
+
 ## 📌 Table of Contents
 
-- [Demo Video](#demo-video)
 - [Program & Team Context](#program--team-context)
 - [Overall Project Explanation](#overall-project-explanation)
 - [Architecture Overview](#architecture-overview)
@@ -52,11 +55,6 @@
 
 ---
 
-## Demo Video
-
-[Watch the FranchiseOps AI Demo](https://drive.google.com/file/d/1F_VQhhmOMvzfSMQZED-ulhA232PwR7H0/view?usp=sharing)
-
----
 
 ## Overall Project Explanation
 
